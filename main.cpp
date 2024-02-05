@@ -1,10 +1,10 @@
 #include <iostream> // The iostream library is used for input and output
 #include <vector>   // The vector library is used for arrays
-#include <cmath>    // The cmath library is used for math functions
-#include <iomanip>  // The iomanip library is used for formatting output
-#include <fstream>  // The fstream library is used for file export and import functions
+#include <cmath>    // Basic C++ library for mathematical functions
+#include <iomanip>  // The iomanip library is used for formatting outputs
+#include <fstream>  // File export and import functions
 
-// My Header files:
+// Custom Header files:
 #include "Aircraft_Performance.h"
 #include "General_Engineering.h"
 
@@ -17,7 +17,7 @@ int main() {
 
     //--------------------------------------------------------------------------------
     // Variable Declarations:
-    double  m, W, LD, alpha_T, Tr, CL, CD, CD_0, e, rho, V, Sw, A_R, Pr;
+    double  m, W, LD, alpha_T, Tr, CL, CD, CD_0, e, rho, V, S, A_R, Pr;
     double g, altitude;
 
     int i;
@@ -41,8 +41,8 @@ int main() {
     CD_0 = 0.02;   // Zero-lift drag coefficient
     e    = 0.8;    // Oswald efficiency factor
     rho  = 1.225;  // Air density, [kg/m^3]
-    A_R  = 8.0;    // Aspect ratio (A_R = b^2/Sw)
-    Sw   = 20.0;   // Wing area, [m^2]
+    A_R  = 8.0;    // Aspect ratio (A_R = b^2/S)
+    S    = 20.0;   // Wing area, [m^2]
 
     //---------------------------------------------------------------------------------
     // Calculations:
@@ -54,7 +54,7 @@ int main() {
 
     for(i = 0; i < n; i++){
         V_LD_Max_array[i] = Airspeed_for_LD_Max(e, A_R, CD_0, CL, W, rho_array[i],
-         Sw, alpha_T);
+         S, alpha_T);
     }
 
 
