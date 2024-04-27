@@ -30,3 +30,36 @@
 *.exe
 *.out
 *.app
+*.elf
+
+# Debug files
+*.dSYM/
+
+# Dependency files
+*.d
+
+# Build files
+build/
+Debug/
+Release/
+.vs/
+
+# Other files
+*.log
+*.pid
+*.seed
+*.user
+*.suo
+*.ncb
+*.sdf
+*.sln.docstates
+
+# IDE files
+.idea/
+*.sln
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.vcxproj
+*.vcxproj.filters
